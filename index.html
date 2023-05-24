@@ -68,7 +68,8 @@
       <iframe class="soundcloud-iframe" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/melbrady/tracks&color=%23555555&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     </div>
       </div>
-    <p>Welcome to the 37th Chamber's Music Corridor !!!!!!!!!!!!!!!</p>
+  <center>
+    <p>Welcome to the 37th Chamber's Music Corridor !!!!!!!!!!!!!!!</p></center>
   </div>
     <br>
     <div class="video-container">
@@ -77,6 +78,126 @@
     <p><center> Mel Brady Will Guide You. Enjoy!</p>
 </center>  
 </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pong Game</title>
+  <style>
+    canvas {
+      background-color: black;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="pong" width="800" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById("pong");
+    const context = canvas.getContext("2d");
+
+    // Create the pong paddle
+    const paddleWidth = 10,
+      paddleHeight = 100;
+    const player = {
+      x: 0,
+      y: canvas.height / 2 - paddleHeight / 2,
+      width: paddleWidth,
+      height: paddleHeight,
+      color: "#ffffff",
+      dy: 8 // Paddle movement speed
+    };
+
+    // Create the pong ball
+    const ball = {
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      radius: 10,
+      speed: 4,
+      dx: 4, // Ball movement speed along the x-axis
+      dy: 4, // Ball movement speed along the y-axis
+      color: "#ffffff"
+    };
+
+    // Draw the pong paddle
+    function drawPaddle(x, y, width, height, color) {
+      context.fillStyle = color;
+      context.fillRect(x, y, width, height);
+    }
+
+    // Draw the pong ball
+    function drawBall(x, y, radius, color) {
+      context.fillStyle = color;
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2, false);
+      context.closePath();
+      context.fill();
+    }
+
+    // Update the canvas
+    function update() {
+      // Clear the canvas
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the paddle
+      drawPaddle(player.x, player.y, player.width, player.height, player.color);
+
+      // Draw the ball
+      drawBall(ball.x, ball.y, ball.radius, ball.color);
+
+      // Move the paddle
+      if (upArrowPressed && player.y > 0) {
+        player.y -= player.dy;
+      } else if (downArrowPressed && player.y + player.height < canvas.height) {
+        player.y += player.dy;
+      }
+
+      // Move the ball
+      ball.x += ball.dx;
+      ball.y += ball.dy;
+
+      // Handle ball collision with walls
+      if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
+        ball.dy *= -1;
+      }
+
+      // Handle ball collision with paddle
+      if (
+        ball.x - ball.radius < player.x + player.width &&
+        ball.y > player.y &&
+        ball.y < player.y + player.height
+      ) {
+        ball.dx *= -1;
+      }
+
+      // Request animation frame
+      requestAnimationFrame(update);
+    }
+
+    // Keyboard event listeners
+    let upArrowPressed = false;
+    let downArrowPressed = false;
+
+    document.addEventListener("keydown", function(event) {
+      if (event.code === "ArrowUp") {
+        upArrowPressed = true;
+      } else if (event.code === "ArrowDown") {
+        downArrowPressed = true;
+      }
+    });
+
+    document.addEventListener("keyup", function(event) {
+      if (event.code === "ArrowUp") {
+        upArrowPressed = false;
+      } else if (event.code === "ArrowDown") {
+        downArrowPressed = false;
+      }
+   
+
+
+
+
 
   <div class="image-container">
     <div class="image-item">
