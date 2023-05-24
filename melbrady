@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Music</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .header-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .music-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .music-item {
+      margin: 10px;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .image-item {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img class="header-image" src="https://s3.amazonaws.com/gather.fandalism.com/3000x3000-3367882--9ACB0B60-D2E2-4D90-AF3A430AADDE70D8--0--3058574--melbrazzzy.jpg" alt="Header Image">
+  </div>
+
+  <div class="music-container">
+    <div class="music-item">
+      <h2>SoundCloud</h2>
+      <p><a href="https://soundcloud.com/melbrady/tracks" target="_blank">Check out my tracks on SoundCloud</a></p>
+    </div>
+    <div class="music-item">
+      <h2>YouTube</h2>
+      <p><a href="https://www.youtube.com/channel/UCJ1ysfwvvDm1g0lgKkqxHVQ" target="_blank">Subscribe to my YouTube channel</a></p>
+    </div>
+  </div>
+
+  <div class="image-container">
+    <div class="image-item">
+      <img src="https://s3.amazonaws.com/gather.fandalism.com/3000x3000-3367882--6705C22A-BDAF-448E-B7D26E9138CEB54F--0--3308176--2turnthisintoadystopiancyberneotokyotyp.jpg" alt="Image 1" width="300" height="300">
+    </div>
+    <div class="image-item">
+      <img src="https://s3.amazonaws.com/gather.fandalism.com/3000x3000-3367882--643A9698-5604-4181-BB52A6972F100ED6--0--2428610--MELX5.jpg" alt="Image 2" width="300" height="300">
+    </div>
+  </div>
+</body>
+</html>
